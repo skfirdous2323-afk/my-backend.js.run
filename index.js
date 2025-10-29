@@ -4,8 +4,16 @@ import dotenv from "dotenv";
 
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 5000;
 
+// 🔧 Render automatically provides PORT — always use it
+const PORT = process.env.PORT || 10000;
+
+// ✅ Root route (so Render doesn’t show “Not Found”)
+app.get("/", (req, res) => {
+  res.send("✅ Shopify Backend is Live on Render!");
+});
+
+// 🛍️ Orders route
 app.get("/orders", async (req, res) => {
   try {
     const response = await fetch(
@@ -20,11 +28,12 @@ app.get("/orders", async (req, res) => {
     const data = await response.json();
     res.json(data);
   } catch (error) {
-    console.error("Error fetching orders:", error);
+    console.error("❌ Error fetching orders:", error);
     res.status(500).json({ error: "Failed to fetch orders" });
   }
 });
 
+// 🚀 Start server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });
