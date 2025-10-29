@@ -1,19 +1,15 @@
 {
   "name": "mybackend",
   "version": "1.0.0",
+  "description": "Simple Express backend running from Termux and deployed on Render",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.18.2"
-  }
-}
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
     "express": "^5.1.0"
-  }
+  },
+  "keywords": [],
+  "author": "skfirdous2323-afk",
+  "license": "ISC"
 }
-
