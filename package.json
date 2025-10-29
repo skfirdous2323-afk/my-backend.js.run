@@ -2,7 +2,8 @@
   "name": "mybackend",
   "version": "1.0.0",
   "description": "Simple Express backend running from Termux and deployed on Render",
-  "main": "index.js",
+
+  "main": "index.js","type": "module",
   "scripts": {
     "start": "node index.js"
   },
@@ -15,3 +16,4 @@
   "author": "skfirdous2323-afk",
   "license": "ISC"
 }
+
